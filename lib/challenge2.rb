@@ -20,5 +20,16 @@ grades_hash.each_pair do |key, value|
       comparison_array.push(:even)
     end
   end
-  puts key + comparison_array.inspect
+
+
+  result = ""
+  if comparison_array.include?(:up)
+    result = "Not in decline"
+  elsif comparison_array.count(:down) < 3
+    result = "Not in decline"
+  else
+    result = "In decline"
+  end
+  puts  key + ': ' + result
+
 end
